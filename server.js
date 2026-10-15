@@ -1,0 +1,15 @@
+// Import Express
+const express = require('express')
+const router = require('../router/contactRouter');
+
+
+//  Intialize Express
+const app = express();
+
+app.use(express.json())
+app.use(router)
+
+app.listen(3000, ()=> {
+    console.log('server is running on PORT: 3000')
+}) 
+
