@@ -1,6 +1,6 @@
 // Import Express
 const express = require('express')
-const router = require('../router/userRouter');
+const router = require('../router/contactRouter');
 
 
 //  Intialize Express
