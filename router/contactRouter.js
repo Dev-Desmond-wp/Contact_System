@@ -3,10 +3,12 @@ const router = express.Router()
 
 const {addContact, viewContact, updateContact, searchContact, deleteContact} = require('../controllers/contactController')
 
-router.post('/addcontact', addContact);
-router.get('/viewcontact', viewContact);
-router.put('/updatecontact/:id', updateContact);
-router.get('/searchcontact', searchContact);
-router.delete('/deletecontact/:id', deleteContact);
+const logger = require('../middleware/logger.js')
+
+router.post('/addcontact', logger, addContact);
+router.get('/viewcontact', logger, viewContact);
+router.put('/updatecontact/:id', logger, updateContact);
+router.get('/searchcontact', logger, searchContact);
+router.delete('/deletecontact/:id', logger, deleteContact);
 
 module.exports = router
